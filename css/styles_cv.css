@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Gugi&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+    margin: 0px ;
+    background-color: #f0ecec;
+}
+#contenedor_base {
+    padding: 3.5% 5%;
+}
+#datos_base {
+    padding: 20px;
+    max-height: 20%;
+    border-radius: 3px;
+    background-color: #000610;
+    color: #009b97;
+    font-family: "Gugi", sans-serif;
+}
+#contenido_gral {
+    padding: 1.5% 1.5%;
+    font-family: "Baloo Thambi 2", sans-serif;
+    color: #000610;
+}
+#background_ex_f {
+    padding: 1.5% 3%;
+    border-radius: 5px;
+    background-color: #002223;
+    color: rgb(240, 236, 236);
+}
+#background_c_h {
+    padding: 1.5% 3%;
+    background: linear-gradient( rgba(240, 236, 236, 0.87), rgba(240, 236, 236, 0.87)), url(../img/cv_bg_01.jpg);
+    box-shadow: 0px 0px 8px 8px #f0ecec inset; 
+    border-radius: 5px;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#nombre_carrera {
+    padding: 1.5% 0% 0%;
+}
+#acerca_de {
+    padding: 1.5% 1.5% 0%;
+    color: #cdf8f6;
+}
+
+#info_contacto {
+    padding: 3% 0% 0%;
+    border-width: medium;
+    border-color: #009b97;
+}
+#tabla_contacto {
+    padding: 1.5% 25%;
+}
+h4 {
+    font-weight: bold;
+    font-family: Gugi, sans-serif;
+}
+a {
+    color: #002223;
+}
+a:visited {
+    color: #009b97;
+}
+a:hover {
+    color: #009b97;
+}
+@media (min-width: 992px) {
+    #nombre_carrera:first-child {
+        font-size: 10rem;
+    }
+    #nombre_carrera:last-child {
+        font-size:30px;
+    }
+    #acerca_de{
+        font-size:12px;
+    }
+    #contenido_general{
+        font-size:14px
+    }
+    h4{
+        font-size: 7rem;
+    }
+}
+@media (min-width: 768px) {
+    #nombre_carrera:first-child {
+        font-size: 5rem;
+    }
+    #nombre_carrera:last-child {
+        font-size:10px;
+    }
+    #acerca_de{
+        font-size:5px;
+    }
+    #contenido_general{
+        font-size:12;
+    }
+    h4{
+        font-size:18px;
+    }
+}
+@media (max-width: 768px) {
+    #nombre_carrera:first-child {
+        font-size:36px;
+    }
+    #nombre_carrera:last-child {
+        font-size:30px;
+    }
+    #acerca_de{
+        font-size:12px;
+    }
+    #contenido_general{
+        font-size:12;
+    }
+    h4{
+        font-size:18px;
+    }
+}

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adriana González- Portafolio</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="icon" type="img/png" href="img/icon.jpg"/>
+    </head>
+    <body class="container-fluid container-base">
+        <div id="contenido-body" class="container-fluid container-base">
+            <div id="banner" class="container-fluid bg-prim">
+                <div id="gif-banner" class="container-fluid  p-5">
+                    <div class="container vertical-center d-print-block">
+                        <h1 id="name" class="container-fluid text-banner text-center title">Adriana González</h1>
+                        <h2 id="job" class="container-fluid text-banner text-center subtitle reduce-subtitle p-1">Artista / Animadora</h2>
+                        <h6 id="aboutme" class="container-fluid text-banner text-justify w-75 w-md-50 color-third">Soy alguien que cree que la creatividad y el arte, combinado con algo de determinación detrás, realmente pueden hacer una diferencia. <br>
+                            Es por eso que me esfuerzo por que todos mis trabajos tengan la calidad para cumplir ese objetivo. <br>
+                            Además, me gusta pensar que todo artista deja una pequeña parte de sí en sus trabajos, y ¿qué mejor razón que esa para hacer algo digno de recordarse?</h6>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--BOOTSTRAP: revisar sticky top-->
+            <span id="navicon" onclick="openNavOver()" class="fixed-top p-4"><i id="menu-burguer" class="fas fa-align-center color-third"></i></span>
+
+            <div id="contenido" class="container-fluid container-base">
+                <nav id="navigation" class="sidenav h-100">
+                    <div id="container" class="align-content-stretch">
+                    
+                        <a href="javascript:void(0)" class="closebtn nav-link text-center" onclick="closeNav()">&times;</a>
+                        
+                        <div id=navbar-list>
+                                <ul class="nav navbar-nav text-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#banner" onclick="closeNav()">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#catalogo" onclick="closeNav()">Catálogo</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#contact" onclick="closeNav()">Contacto</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages/cv.html" target="_blank" onclick="closeNav()">CV</a>
+                                    </li>
+                                    <div class="container p-5">
+                                        <li id="login" class="nav-item">
+                                            <a class="nav-link" href="#" onclick="closeNav()" data-toggle="modal" data-target="#signinModal">Iniciar Sesión</a>
+                                        </li>
+                                        <li id="register" class="nav-item">
+                                            <a class="nav-link" href="#" onclick="closeNav()" data-toggle="modal" data-target="#signupModal">Registrarse</a>
+                                        </li>
+                                        <li id="logout" class="nav-item">
+                                            <a id="logout" class="nav-link" href="#" onclick="closeNav(), LogOut()">Cerrar Sesión</a>
+                                        </li>
+                                    </div>
+                                    <li class="nav-item crud">
+                                        <a class="nav-link" href="pages/crud.html" onclick="closeNav()">CRUD</a>
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div>
+                    <!-- Modal SIGNUP-->
+                    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Registrarse</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="signupForm">
+                                    <div class="form-group">
+                                        <input type="email" id="signupEmail" class="form-control" placeholder="Correo electrónico" required autofocus>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" id="signupPassword" class="form-control" placeholder="Contraseña" required>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="registrarUsuario()" type="submit" class="btn btn-modal">Registrarse</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                        <!-- Modal SIGNIN-->
+                        <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Inicio de Sesión</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="signinForm" class="loginform">
+                                        <div class="form-group">
+                                            <input type="email" id="signinEmail" class="form-control" placeholder="Correo electrónico" autofocus>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" id="signinPassword" class="form-control" placeholder="Contraseña" >
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button onclick="LogIn()" type="submit" class="btn btn-modal">Iniciar Sesión</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                </div>
+    
+                <div id="catalogo" class="container-fluid container-base bg-sec">
+                    <div class="row titulo-seccion">
+                        <h2 class="col-12 container-fluid subtitle container-banner font-seccion">Catálogo</h2>
+                    </div>
+    
+                    <div class="row container justify-content-center m-auto">
+                        <div class="list-group-horizontal d-flex" >
+                            <ul class="list-unstyled text-center text-align-center" >
+                                <div class="list-group list-group-horizontal col-12 col-md-6">
+                                    <li class="list-group-item "><button id="btn-todos" class="btn btn-sm btn-prim btn-proyecto">TODOS</button></li>
+                                    <li class="list-group-item "><button id="btn-concept" class="btn btn-sm btn-sec btn-proyecto">Concept Art</button></li>
+                                    <li class="list-group-item "><button id="btn-ilustracion" class="btn btn-sm btn-sec btn-proyecto">Ilustración Digital</button></li> 
+                                </div>
+                                <div class="list-group list-group-horizontal col-12 col-md-6">
+                                    <li class="list-group-item "><button id="btn-modelado" class="btn btn-sm btn-sec btn-proyecto">Modelado 3D</button></li>
+                                    <li class="list-group-item "><button id="btn-animacion" class="btn btn-sm btn-sec btn-proyecto">Animación</button></li>
+                                    <li class="list-group-item "><button id="btn-tinta" class="btn btn-sm btn-sec btn-proyecto">Pluma y Tinta</button></li>  
+                                </div>
+                            </ul>  
+                        </div>
+                    </div>
+    
+                    <div id="project-container" class="container card-columns mx-auto">
+    
+                    </div>
+    
+                    <div id="modal-add" class="modal fade">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+    
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Nuevo Proyecto</h4>
+                                    <button id="close-modal" type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+    
+                                <div class="modal-body">
+                                    <form id="project-form" name="add-form">
+                                        <div id="validation" class="text-danger mb-2"></div>
+    
+                                        <div class="form-group">
+                                            <input type="text" id="project-title" class="form-control" placeholder="Nombre del Proyecto" autofocus>
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <textarea id="project-description" rows="" class="form-control" placeholder="Descripción del proyecto"></textarea>
+                                        </div>
+    
+                                        <div class="form-group">
+                                            <label for="selcat">Categoría:</label>
+                                            <select class="form-control" id="project-cat">
+                                                <option>Concept Art</option>
+                                                <option>Ilustración Digital</option>
+                                                <option>Modelado 3D</option>
+                                                <option>Animación</option>
+                                                <option>Tinta</option>
+                                            </select>
+                                        </div>
+    
+                                        <div class="custom-file">
+                                            <input id="project-img" type="file" accept="image/*" class="custom-file-input">
+                                            <label class="custom-file-label" for="project-img">Seleccionar imagen</label>
+                                        </div>
+                                        <div class="container mt-2 text-center">
+                                            <img class="img-fluid"/>	
+                                        </div>
+    
+                                        <div>
+                                            <button class="btn btn-modal float-right" id="btn-project-form">
+                                                Subir Proyecto
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="contact" class="container-fluid container-base bg-prim">
+                    <div class="container">
+                        <ul id="lista-contacto" class="list-group list-group-horizontal flex-md-row flex-column list-unstyled text-center text-align-center vertical-center-down">
+                            <li class="list-group-item flex-fill vertical-elem">Adriana González</li>
+                            <li class="list-group-item flex-fill vertical-elem vertical-text d-inline mx-auto p-2">AGC</li>
+                            <li class="list-group-item flex-fill vertical-elem"><a class="btn a-btn" href="pages/cv.html" target="_blank">CV</a></li>
+                            <li class="list-group-item flex-fill vertical-elem">adriana7gc@gmail.com</li>
+                            <li class="list-group-item flex-fill vertical-elem"><a class="contact-link" href="https://www.instagram.com/adri.daze.art/" target="_blank"><i class="fab fa-instagram list-group-item-link"></i></a></i></li>
+                            <li class="list-group-item flex-fill vertical-elem"><a class="contact-link" href="https://daze2358.itch.io/" target="_blank"><i class="fab fa-itch-io list-group-item-link"></i></a></li>
+                            <li class="list-group-item flex-fill vertical-elem"><button type="button" class="btn a-btn border-0" data-toggle="modal" data-target="#map-div"><i class="fas fa-map-marker-alt list-group-item-link"></i></button></li>
+                            <li class="list-group-item flex-fill vertical-elem"><button type="button" class="btn a-btn" data-toggle="modal" data-target="#modal-contact">CONTACT ME!</button></li>
+                        </ul>
+
+                        <div id="modal-contact" class="modal fade">
+                            <div  class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Contacto</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <form id="contact-form" class="text-justify" action="mailto:aviedo@up.edu.mx?Subject=Contacto%20WebPortafolio" method="post" enctype="text/plain">
+                                            <div class="form-group">
+                                                <label id="l-inputname">Nombre:</label>
+                                                <input id="inputname" type="text" class="form-control" name="Nombre " autofocus required>
+                                            </div>
+                                            
+                                            <div class="form-row">
+                                                <div class="col">
+                                                    <div class="form-group w-75 text-center mx-auto">
+                                                        <div class="form-check-inline">
+                                                            <input type="radio" class="form-check-input" name="Persona ">Persona
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <input type="radio" class="form-check-input" name="Empresa ">Empresa
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    
+                                                <div class="form-group col">
+                                                    <label id="l-inputcountry">País:</label>
+                                                    <input id="inpnutcountry" type="text" class="form-control" placeholder="-" name="País ">
+                                                    <!--buscar selector de países con jQuery-->
+                                                </div>
+                                            </div>
+                            
+                                            <div class="form-group form-row">
+                                                <label id="l-inputcelphone" class="col-4">Teléfono de contacto:</label>
+                                                <input id="inputcelphone" type="text" class="form-control col-8" name="Teléfono " required>
+                                            </div>
+                            
+                                            <div class="form-group">
+                                                <label id="l-inputemail">E-mail: </label>
+                                                <input id="inputemail" type="email" class="form-control" placeholder="Correo electrónico" name="Correo " required>
+                                            </div>
+                            
+                                            <div class="form-group">
+                                                <label id="l-inputmessage">Tu mensaje:</label>
+                                                <textarea id="inputmessage" rows="" class="form-control" name="Mensaje " required></textarea>
+                                            </div>
+                                            <div class="row d-flex justify-content-around">
+                                                <input type="submit" class="btn btn-modal" value="Enviar">
+                                                <input type="reset" class="btn btn-modal" value="Reset">
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>                              
+                            </div>
+                            
+                            <div id="map-div" class="modal fade">
+                                <div  class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        
+                                        <div class="modal-body">
+                                            <div class="map-outer">
+                                                <div class="gmap_canvas">
+                                                    <iframe
+                                                        id="gmap_canvas"
+                                                        src="https://maps.google.com/maps?q=universidad%20panamericana&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                                        frameborder="0"
+                                                        scrolling="no"
+                                                        marginheight="0"
+                                                        marginwidth="0"
+                                                    ></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+            
+
+            <div id="footer" class="footer container-fluid text-center bg-fth ">
+                <div class="row">
+                    <small class="col-12 color-prim">Copyright <i class="far fa-copyright color-prim"></i> Adriana González <a href="pages/cv.html" class="color-prim footer-link" target="_blank">CV</a></small>
+                    <small class="col-12">
+                        <a href="#banner" class="footer-link">Home</a>
+                        <a href="#catalogo" class="footer-link">Catálogo</a>
+                        <a href="#contact" class="footer-link">Contacto</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+        
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBu61jbWPf_25O-rvjp35xewkDfJF4MSTU",
+            authDomain: "agc-portafolioweb.firebaseapp.com",
+            databaseURL: "https://agc-portafolioweb.firebaseio.com",
+            projectId: "agc-portafolioweb",
+            storageBucket: "agc-portafolioweb.appspot.com",
+            messagingSenderId: "103668232916",
+            appId: "1:103668232916:web:45520f77a77a0fa8678141",
+            measurementId: "G-3RG7D6DZQ7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const authF = firebase.auth();
+        //const dataF = firebase.database();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

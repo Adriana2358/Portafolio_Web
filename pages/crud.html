@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adriana González- Portafolio</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/styles.css" />
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="icon" type="img/png" href="../img/icon.jpg"/>
+    </head>
+    <body class="container-fluid container-base">
+        <div id="contenido-body" class="container-fluid container-base bg-sec">
+            <div class="row titulo-seccion">
+                <h2 class="col-12 container-fluid subtitle container-banner font-seccion">CRUD</h2>
+            </div>
+            <div id="crud" class="container-fluid p-5">
+                <div>
+                    <!--BOOTSTRAP: revisar sticky top-->
+                    <span id="navicon" onclick="openNav()" class="fixed-top p-4"><i id="menu-burguer" class="fas fa-align-center color-third"></i></span>
+
+                    <nav id="navigation" class="sidenav h-100">
+                        <div id="container" class="align-content-stretch">
+                        
+                            <a href="javascript:void(0)" class="closebtn nav-link text-center" onclick="closeNav()">&times;</a>
+                            
+                            <div id=navbar-list>
+                                    <ul class="nav navbar-nav text-center">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../index.html#banner" onclick="closeNav()">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../index.html#catalogo" onclick="closeNav()">Catálogo</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../index.html#contact" onclick="closeNav()">Contacto</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../pages/cv.html" target="_blank" onclick="closeNav()">CV</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../pages/crud.html" onclick="closeNav()">CRUD</a>
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <!--FIX: NOMBRES-->
+                <div id="project-container" class="container card-columns">
+        
+                </div>
+
+                <div id="cont-add" class ="row contaner-fluid d-flex justify-content-center">
+                    <button type="button" id="btn-add" class="btn btn-sm m-3" data-toggle="modal" data-target="#modal-add">Añadir Proyecto</button>
+                </div>
+
+                <div id="modal-add" class="modal fade">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h4 class="modal-title">Nuevo Proyecto</h4>
+                                <button id="close-modal" type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <div class="modal-body">
+                                <form id="project-form" name="add-form">
+                                    <div id="validation" class="text-danger mb-2"></div>
+
+                                    <div class="form-group">
+                                        <input type="text" id="project-title" class="form-control" placeholder="Nombre del Proyecto" autofocus>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <textarea id="project-description" rows="" class="form-control" placeholder="Descripción del proyecto"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="selcat">Categoría:</label>
+                                        <select class="form-control" id="project-cat">
+                                            <option>Concept Art</option>
+                                            <option>Ilustración Digital</option>
+                                            <option>Modelado 3D</option>
+                                            <option>Animación</option>
+                                            <option>Tinta</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="custom-file">
+                                        <input id="project-img" type="file" accept="image/*" class="custom-file-input">
+                                        <label class="custom-file-label form-control" for="project-img">Seleccionar imagen</label>
+                                    </div>
+                                    <div class="container mt-2 text-center">
+                                        <img class="img-fluid"/>	
+                                    </div>
+
+                                    <div>
+                                        <button class="btn btn-modal float-right" id="btn-project-form">
+                                            Subir Proyecto
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div id="footer" class="footer container-fluid text-center bg-fth ">
+                    <div class="row">
+                        <small class="col-12 color-prim">Copyright <i class="far fa-copyright color-prim"></i> Adriana González <a href="../pages/cv.html" class="color-prim footer-link" target="_blank">CV</a></small>
+                        <small class="col-12">
+                            <a href="../index.html#banner" class="footer-link">Home</a>
+                            <a href="../index.html#catalogo" class="footer-link">Catálogo</a>
+                            <a href="../index.html#contact" class="footer-link">Contacto</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBu61jbWPf_25O-rvjp35xewkDfJF4MSTU",
+            authDomain: "agc-portafolioweb.firebaseapp.com",
+            databaseURL: "https://agc-portafolioweb.firebaseio.com",
+            projectId: "agc-portafolioweb",
+            storageBucket: "agc-portafolioweb.appspot.com",
+            messagingSenderId: "103668232916",
+            appId: "1:103668232916:web:45520f77a77a0fa8678141",
+            measurementId: "G-3RG7D6DZQ7"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <script src="../scripts/crud.js"></script>
+    </body>
+</html>

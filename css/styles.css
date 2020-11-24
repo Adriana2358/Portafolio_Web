@@ -1,0 +1,386 @@
+/*----------------------------IMPORTS-----------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lexend+Peta&family=Vast+Shadow&display=swap');
+
+/*-------------------------------ELEMENTS-------------------------*/
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    color: #cdf8f6;
+    font-size: 2vh;
+    font-family: "Lexend Peta" , sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*-------------------------------CLASSES--------------------------*/
+.container-base {
+    padding: 0;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.vertical-center-down {
+    padding: 45vh 0;
+    text-align: center;
+}
+
+.vertical-text {
+    float: right;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+}
+
+.center {
+    position: relative;
+    text-shadow: none;
+    top: 50%;
+    margin: 0 auto;
+        margin-top: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translate(0, -50%);
+    margin-top: 10px;
+}
+.title {
+    font-size: 7.5vh;
+    font-family: "Fredericka the Great", sans-serif;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.8vh;
+    font-family: "Vast Shadow", sans-serif;
+}
+
+.reduce-subtitle {
+    background: #f0ecec;
+    color: #000610;
+    border-radius: 5px;
+}
+
+.titulo-seccion { 
+    padding: 5vh 0 2vh;
+}
+
+.vertical-elem {
+    margin: 5px 0;
+}
+
+.font-seccion {
+    font-size: 4vh;
+    background-color: #cdf8f6;
+    color: #009b97;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.5vh;
+}
+
+.card {
+    max-width: 500px;
+}
+
+/*.proyect-name {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    height: 100%;
+    padding: 5%;
+    z-index: 10;
+    color: transparent;
+    transition: background-color, 0.3s ease, color 0.3s ease;
+    
+    background-color:#000610;
+    opacity: 0;
+    font-weight: bolder;
+}
+
+.proyect-name:hover {
+    opacity: 0.7;
+}*/
+
+.contact-container {
+    margin-top: 50vh;
+}
+
+.contact-link:hover {
+    color:#009b97;
+}
+
+.list-group-horizontal {
+    flex-direction: row;
+}
+
+.list-group-item {
+    margin: auto;
+    padding: 0.5vh;
+    background: none;
+    vertical-align: middle;
+}
+
+.list-group-item-link:hover {
+    color: #009b97;
+}
+
+label.form-group{
+    border-radius: 0.5vh;
+    background: #002223;
+}
+
+::placeholder {
+    padding: 2vw;
+    background: #cdf8f6;
+    color: #009b97 !important;
+    opacity: 0.9;
+}
+
+.a-btn {
+    border-color: #009b97;
+    color: #cdf8f6;
+    background: none;
+    border-radius: 5px;
+}
+
+.a-btn:hover{
+    color: #009b97;
+}
+
+a.btn:hover{
+    color: #009b97;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f0ecec;
+    overflow-x: hidden;
+    padding-top: 5vh 5vw;
+    transition: 1s;
+}
+
+.sidenav .closebtn {
+    font-size: 36px;
+}
+
+.nav-link {
+    font-size: 1.8vh;
+    font-family: "Vast Shadow", sans-serif;
+    color: #000610;
+}
+
+a.nav-link:hover {
+    color: #009b97;
+}
+
+.footer-link {
+    font-size: 2vh;
+    text-decoration: none;
+    color:#000610;  
+    padding: 0.5vw;
+}
+
+.footer-link:hover {
+    color: #009b97;
+    text-decoration: none;
+}
+
+.map-outer {
+    position: relative;
+    text-align: center; 
+}
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+}
+
+.btn-card{
+    background: none;
+    color: #f0ecec;
+}
+
+.btn-card:hover {
+    color: #009b97;
+}
+.btn-prim {
+    border-color: #009b97;
+    background: none;
+    color: #009b97;
+    margin: 1vh;
+}
+
+.btn-prim:hover {
+    color:#cdf8f6;
+    border-color: #cdf8f6;
+}
+
+.btn-sec {
+    margin: 1vh;
+    background: none;
+    border-color: #009b97;
+    color: #cdf8f6;
+    border-radius: 5px;
+}
+
+.btn-sec:hover {
+    color: #009b97;
+}
+
+.btn-proyecto:active {
+    background :#009b97;
+}
+
+.modal-content {
+    background: #009b97;
+}
+
+.btn-modal {
+    background: none;
+    border-color: #cdf8f6;
+    color: #cdf8f6;
+    border-radius: 5px;
+}
+
+.btn-modal:hover {
+    color: #002223;
+    border-color: #002223;
+}
+
+.form-control {
+    background: #cdf8f6;
+    color: #002223;
+    border-radius: 5px;
+    border-color: none;
+}
+
+.form-control:active {
+    border-color: #f0ecec;
+}
+
+.color-prim {
+    color: #000610;
+}
+
+.color-sec{
+    color: #002223;
+}
+
+.color-third {
+    color: #009b97;
+}
+
+.color-fth {
+    color: #cdf8f6;
+}
+
+.color-white {
+    color: #f0ecec;
+}
+
+.bg-prim {
+    background: #000610;
+}
+
+.bg-sec {
+    background: #002223;
+}
+
+.bg-third {
+    background: #009b97;
+}
+
+.bg-fth {
+    background: #cdf8f6;
+}
+
+.bg-white {
+    background: #f0ecec;
+}
+
+/*---------------------------------ID------------------------------*/
+#banner, #contact, #crud{
+    min-height: 100vh;
+}
+
+#job {
+    max-width: 25vw;
+}
+
+#name {
+    padding: 3rem 0;
+}
+
+#contenido {
+    transition: margin-left 1s;
+}
+
+#navigation {
+    padding-top: 4.5rem;
+}
+
+#navbar-list {
+    padding: 50vh, 6vw, 30vh;
+}
+
+#navicon {
+    margin-right: 95vw;
+}
+
+
+#contact-div {
+    max-height: 40vh;
+    border-style: solid;
+    border-color: #009b97;
+    border-radius: 2vh;
+    border-width: 0.5vh;
+    margin: auto;
+    padding: 4vh;
+    transition: 1s;
+    bottom: 0;
+}
+
+#cont-add {
+    padding: 4vh, 4vh, 1vh;
+}
+
+#btn-add {
+    background: #009b97;
+    color: #000610;
+}
+
+#btn-add:hover {
+    color: #cdf8f6;
+}
+
+#gif-banner {
+    min-height: 100vh;
+    padding: 1.5% 3%;
+    background: linear-gradient( rgba(0, 6, 16, 0.80), rgba(0, 6, 16, 0.80)), url(../img/gif-bg.gif);    
+    box-shadow: 0px 0px 8px 8px #000610 inset; 
+    border-radius: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#aboutme {
+    padding: 3rem 0 0;
+    font-size: 1.8vh;
+}
